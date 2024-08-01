@@ -17,6 +17,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from main.views import inicio, ContactoView, RegistroView
+from agendas.views import agendas, AgendaView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -24,4 +25,6 @@ urlpatterns = [
     path('', inicio, name='inicio'),
     path('contacto', ContactoView.as_view(), name='contacto'),
     path('registro', RegistroView.as_view(), name='registro'),
+    path('agendas', agendas, name='agendas'),
+    path('agenda/nueva', AgendaView.as_view(), name='nueva_agenda'),
 ]
